@@ -9,12 +9,12 @@
 To run the scheduler admin you can use docker, it will need a scheduler to connect to, you can specify in the variable env. `SCHEDULERS_ADDR` for example: `SCHEDULERS_ADDR=scheduler`.
 ### Regular version
 ```
-docker run -d -p 9000:9000 -e SCHEDULERS_ADDR=<schedulers-address> yoann-abbes/kafka-message-scheduler-admin
+docker run -d -p 9000:9000 -e SCHEDULERS_ADDR=<schedulers-address> yabbes/kafka-message-scheduler-admin
 ```
 ### Mini version
 The mini version is a "mocked" version of the admin all in one, for demonstration purpose
 ```
-docker run -d -p 9000:9000 yoann-abbes/kafka-message-scheduler-admin:mini
+docker run -d -p 9000:9000 yabbes/kafka-message-scheduler-admin:mini
 ```
 Then open browser at `localhost:9000`
 ## Usage
@@ -64,7 +64,7 @@ make start
 ```
 ### Frontend (in folder ./client)
 For development you will need a running admin server launched as described before or the mini version of the scheduler admin which is running without any external dependencies:
-- `docker run -p 9000:9000 yoann-abbes/kafka-message-scheduler-admin:mini`: startup mini version of the scheduler (no external dependencies required)
+- `docker run -p 9000:9000 yabbes/kafka-message-scheduler-admin:mini`: startup mini version of the scheduler (no external dependencies required)
 or start a standard admin server
 - `make start` (inside /server): startup GO server on local
 The frontend is written with TypeScript and React. You can use the following commands to manage the development lifecycle:
@@ -77,7 +77,7 @@ Then open browser at: http://localhost:3000
 #### Quick start
 ```
 cd client
-docker run -d -p 9000:9000 yoann-abbes/kafka-message-scheduler-admin:mini
+docker run -d -p 9000:9000 yabbes/kafka-message-scheduler-admin:mini
 pnpm install
 pnpm start
 ```
